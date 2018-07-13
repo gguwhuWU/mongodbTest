@@ -1,0 +1,26 @@
+{
+  "name": "testmongo",
+  "version": "1.0.0",
+  "description": "test mongo db",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "decimal.js": "^10.0.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
+    "materialize-css": "^0.100.2",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
+    "mongoose": "^5.2.0",
+    "uuid": "^3.3.2",
+    "vue": "^2.5.16"
+  }
+}

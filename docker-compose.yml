@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    # Expose ports [HOST:CONTAINER}
+    ports:
+      - "3000:3000"
+
+    # Link to containers in another service.
+    # Links also express dependency between services in the same way as depends_on,
+    # so they determine the order of service startup.
+    links:
+      - mongo
+    container_name: my_nodeservice
+    environment:
+      DB_NAME: mymongodb
+      DB_PORT: 27017
+      DB_COLLECTION_NAME: myDB
+  mongo:
+    image: "mongo:wu"
+    ports:
+      - "27017:27017"
+    container_name: mymongodb
+    volumes:
+      - mongodbdata:/data/db
+      - mongodbdata_config:/data/configdb
+volumes:
+  mongodbdata:
+    external:
+      name: mongodbdata
+  mongodbdata_config:
+    external:
+      name: mongodbdata_config
